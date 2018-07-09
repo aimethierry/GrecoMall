@@ -1,0 +1,93 @@
+{% extends "dashboard/dashboard.html" %}
+{% load static %}
+
+<div style="background-color:white">
+{% block content %}
+
+
+
+
+         
+
+<div class='col-sm-4 col-sm-offset-4 text-center'>
+
+        <p class='lead'>
+        Order Summary</p>
+    
+
+        {% for c in item %}
+    <table class='table' style="margin-top:50px">
+        <tr>
+            <td>Name of item: 
+                <br/>
+                <b>{{ c.product }}</b>
+                <br/> </td>
+        </tr>
+
+
+            <tr>
+                <td>Quantity: 
+                    <br/>
+                    <b>{{ c.quantity }}</b>
+                    <br/> </td>
+            </tr>
+
+
+            <tr>
+                    <td>Price: 
+                        <br/>
+                        <b>{{ c.price }}</b>
+                        <br/> </td>
+                </tr>
+    </table>
+    {% endfor %}
+
+
+
+
+    </div>
+    
+    <div class='col-sm-4 col-sm-offset-4 text-center'>
+
+        <h3>belongs to</h3>
+
+        <p>
+            {{ detail.first_name }}
+        </p>
+        
+        <p>
+                {{ detail.last_name }}
+        </p>
+
+
+        <p>
+                {{ detail.email }}
+        </p>
+
+        <p>
+            <b>Billing to</b>
+            <br/> {{ detail.address }}
+            <p>
+
+                    <b>Street</b>
+                        <br/> {{ detail.street }}
+                    <p>
+                <p>
+                    <b>Phone number </b>
+                    <br/> {{ detail.phone_number }}
+                <p>
+
+                    
+                
+    
+
+        <br/>
+    
+      
+    
+    
+
+        
+{% endblock %}
+
+</div>

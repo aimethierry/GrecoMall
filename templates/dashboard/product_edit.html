@@ -1,0 +1,12 @@
+{% extends "dashboard/dashboard.html" %}
+{% load static %}
+{% block content %}
+
+
+<h4 style="color:rgb(6, 83, 83)">you can edit your product here</h4>
+<form action="./" method="POST" enctype="multipart/form-data" style="margin-top:50px">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value='send' />
+</form>
+{% endblock %}  
